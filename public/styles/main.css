@@ -1,0 +1,316 @@
+/* Reset controls */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: none;
+}
+
+:root {
+
+    /* Animations */
+    --a-quick: 0.2s;
+    --a-default: 0.3s;
+    --a-medium: 0.6s;
+
+    /* Borders */
+    --b-round: 50%;
+
+    /* Colors */
+    --c-default: #fafafa;
+    --c-invert: #121212;
+    --c-primary-0: #F0F2F4;
+    --c-primary-25: #C6CCD7;
+    --c-primary-50: #8A96AD;
+    --c-primary-75: #5E6D87;
+    --c-primary-100: #404A5C;
+    --c-secundary-0: #e0b5b5;
+    --c-secundary-50: #996C6C;
+    --c-secundary-100: #8B5A5A;
+    --c-tertiary-50: #9F8B79;
+
+    /* Layout */
+    --w-dix: 10vw;
+    --w-quarter: 25vw;
+    --w-third: 33vw;
+    --w-half: 50vw;
+    --w-full: 100vw;
+    --h-full: 100vh;
+
+    /* Units */
+    --u-nano: 0.1em;
+    --u-micro: 0.25em;
+    --u-small: 0.375em;
+    --u-medium: 0.5em;
+    --u-default: 1em;
+    --u-large: 2em;
+}
+
+body {
+    overflow: hidden;
+    background-color: var(--c-primary-0);
+    font-family: open sans, sans-serif;
+}
+
+/* Lay-out */
+
+section:first-child {
+    width: var(--w-full);
+    height: auto;
+    position: absolute;
+    bottom: 15em;
+}
+
+section:last-child {
+    width: var(--w-full);
+    height: 15em;
+    background-color: var(--c-primary-25);
+    position: absolute;
+    bottom: 0;
+}
+
+/* icons */
+
+svg {
+    fill: var(--c-primary-75);
+}
+
+/* Typography */
+
+h1 {
+    font-size: 2.5em;
+}
+
+/* Coffee machine */
+.coffee-machine {
+    width: fit-content;
+    display: block;
+    margin: var(--u-default) auto 0;
+    position: relative;
+}
+
+.coffee-machine .body {
+    width: 16em;
+    height: 32em;
+    background-color: var(--c-primary-50);
+    border-radius: 0.5em 0.5em 0 0;
+    padding: var(--u-large);
+}
+
+.coffee-machine .module {
+    width: 12em;
+    height: 16em;
+    background-color: var(--c-primary-25);
+    border-radius: var(--u-small);
+    padding: var(--u-default);
+}
+
+.coffee-machine .display {
+    width: auto;
+    height: 100%;
+    background-color: var(--c-default);
+    border-radius: var(--u-micro);
+}
+
+.coffee-machine .display ul {
+    height: 100%;
+}
+
+.coffee-machine .display li {
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-machine .display a {
+    width: 8em;
+    height: 3em;
+    color: var(--c-primary-75);
+    background-color: var(--c-primary-0);
+    border: 0.1em solid var(--c-primary-25);
+    border-radius: var(--u-micro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--u-small);
+    transition: var(--a-default);
+}   
+
+.coffee-machine .display a:hover {
+    background-color: var(--c-primary-25);
+}
+
+.coffee-machine .display a:focus {
+    background-color: var(--c-primary-25);
+}
+
+.coffee-machine .dispenser {
+    width: 6em;
+    height: 4em;
+    background-color: var(--c-secundary-50);
+    border-radius: 0 0 var(--u-small) var(--u-small);
+    position: relative;
+    z-index: 3;
+    margin: 0 auto;
+}
+
+.coffee-machine .dispenser .left-dispenser, .right-dispenser {
+    width: 1.5em;
+    height: 1em;
+    background-color: var(--c-secundary-100);
+    border-radius: 0 0 var(--u-small) var(--u-small);
+    position: absolute;
+    z-index: 2;
+    bottom: -1em;
+}
+
+.coffee-machine .dispenser .left-dispenser {
+    left: var(--u-default);
+}
+
+.coffee-machine .dispenser .left-dispenser::after, .right-dispenser::after  {
+    content:'';
+    width: 1em;
+    height: 0em;
+    background-color: var(--c-tertiary-50);
+    position: absolute;
+    z-index: 0;
+    top: 1em;
+    left: 0.25em;
+    animation: liquid 10s 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes liquid {
+    0% {
+        height: 0em;
+    }
+
+    2% {
+        height: 1em;
+    }
+
+    98% {
+        height: 1em;  
+    }
+
+    100% {
+        height: 0em;
+    }
+    
+}
+
+.coffee-machine .dispenser .right-dispenser {
+    right: var(--u-default);
+}
+
+.coffee-machine .mugholder {
+    width: 12em;
+    height: 12em;
+    background-color: var(--c-primary-100);
+    position: absolute;
+    bottom: 0;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.coffee-machine .mug {
+    width: 5em;
+    height: 5em;
+    display: block;
+    background-color: var(--c-primary-0);
+    border-radius: 0 0 33% 33%;
+    position: absolute;
+    top: 4em;
+    left: 3.5em;
+}
+
+.coffee-machine .mugear {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--c-primary-0);
+    border-radius: 0 50% 50% 0;
+    position: absolute;
+    right: -2em;
+}
+
+.coffee-machine .mugear::after {
+    content:'';
+    width: 1em;
+    height: 1em;
+    background-color: var(--c-primary-100);
+    border-radius: 0 50% 50% 0;
+    position: absolute;
+    top: 0.75em;
+    left: 0.75em;
+}
+
+.coffee-machine .mugplatform {
+    width: 8em;
+    height: 1em;
+    background-color: var(--c-secundary-50);
+    border-radius: var(--u-micro);
+    position: absolute;
+    left: var(--u-large);
+    bottom: 2em;
+    margin: 0 auto;
+}
+
+/* Squad member list */
+
+.squad-members {
+   width: 25em;
+   height: 12em;
+   margin: 0 auto;
+   padding: var(--u-default);
+   overflow: hidden;
+}
+
+.squad-members ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--u-medium)
+}
+
+.squad-members ul img {
+    width: 4em;
+    height: 4em;
+    border-radius: var(--b-round);
+}
+
+.squad-members a {
+    width: 4em;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    gap: var(--u-small);
+    overflow: hidden;
+    transition: var(--a-default);
+}
+
+.squad-members a:hover {
+    width: 15em;
+    overflow: visible;
+}
+
+.squad-members span {
+    opacity: 0;
+    transition: var(--a-default);
+}
+
+.squad-members a:hover span {
+    opacity: 1;
+}
