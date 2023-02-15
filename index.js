@@ -1,11 +1,7 @@
-// Importeer express uit de node_modules map
 import express, { response } from 'express'
 
 // const url = 'https://whois.fdnd.nl/api/v1/member/stefanvanderkort'
-const url = 'https://whois.fdnd.nl/api/v1/squad/squat-c-2022'
-const data = await fetch(url)
-.then((response) => response.json())
-console.log(data);
+const url = 'https://whois.fdnd.nl/api/v1/squad/'
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -19,9 +15,15 @@ app.use(express.static('public'))
 
 // Maak een route voor de index
 app.get('/', function (req, res) {
-  // res.send('Hello World!')
-  res.render('index', data)
-})
+
+    let slug = req.query.squad || 'squad-a-2022'
+    let orderBy = req.query.orderBy || 'name'
+    let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC'
+  
+    fetchJson(squadUrl).then((data) => {
+      res.render('index', data)
+    })
+  })
 
 // Stel het poortnummer in waar express op gaat luisteren
 app.set('port', process.env.PORT || 8000)
@@ -32,3 +34,8 @@ app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
+async function fetchJson(url) {
+    return await fetch(url)
+      .then((response) => response.json())
+      .catch((error) => error)
+  }
