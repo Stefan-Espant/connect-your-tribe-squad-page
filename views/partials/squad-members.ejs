@@ -1,34 +1,35 @@
 <div class="squad-members">
-    <ul>
-        <li>
-            <a>
-                <img src=" <%- member.avatar %> " alt=" <%- member.name %> " />
-                <span> <%- member.name %> <%- member.prefix %> <%- member.surname %></span>  
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src=" <%- member.avatar %> " alt=" <%- member.name %> " />
-                <span> <%- member.name %> <%- member.prefix %> <%- member.surname %></span>  
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src=" <%- member.avatar %> " alt=" <%- member.name %> " />
-                <span> <%- member.name %> <%- member.prefix %> <%- member.surname %></span>  
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src=" <%- member.avatar %> " alt=" <%- member.name %> " />
-                <span> <%- member.name %> <%- member.prefix %> <%- member.surname %></span>  
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src=" <%- member.avatar %> " alt=" <%- member.name %> " />
-                <span> <%- member.name %> <%- member.prefix %> <%- member.surname %></span>  
-            </a>
-        </li>
-    </ul>
+  <ul>
+    <% squad.members.forEach(member => { %>
+    <li>
+      <a href="<%= member.website %>">
+        <% if (member.avatar) { %>
+        <img
+          src="<%= member.avatar %>"
+          alt="De avatar van <%= member.name %>"
+        />
+        <% }else{ %>
+        <svg
+          width="40"
+          height="35"
+          viewBox="0 0 40 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M40 20C40 25.6408 37.6648 30.7361 33.9085 34.372C31.6825 28.8764 26.294 25 20 25C13.706 25 8.31748 28.8764 6.09154 34.372C2.33518 30.7361 0 25.6408 0 20C0 8.9543 8.9543 0 20 0C31.0457 0 40 8.9543 40 20ZM20 22C24.1421 22 27.5 18.6421 27.5 14.5C27.5 10.3579 24.1421 7 20 7C15.8579 7 12.5 10.3579 12.5 14.5C12.5 18.6421 15.8579 22 20 22Z"
+            fill="white"
+          />
+        </svg>
+        <% } %>
+        <h2>
+          <%= member.name %> <%= member.prefix %> <%=
+          member.surname %>
+        </h2>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
 </div>

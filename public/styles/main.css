@@ -12,9 +12,18 @@ li {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:focus-visible {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible {
     outline: none;
 }
 
@@ -39,7 +48,9 @@ a:focus-visible {
     --c-secundary-0: #e0b5b5;
     --c-secundary-50: #996C6C;
     --c-secundary-100: #8B5A5A;
-    --c-tertiary-50: #9F8B79;
+    --c-tertiary-50: #7c624c;
+    --c-tea: #e7e2596a;
+    --c-water: #6ea5bd;
 
     /* Layout */
     --w-dix: 10vw;
@@ -59,7 +70,7 @@ a:focus-visible {
 }
 
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: var(--c-primary-0);
     font-family: open sans, sans-serif;
 }
@@ -77,6 +88,7 @@ section:last-child {
     width: var(--w-full);
     height: 15em;
     background-color: var(--c-primary-25);
+    padding: var(--u-default);
     position: absolute;
     bottom: 0;
 }
@@ -90,7 +102,7 @@ svg {
 /* Typography */
 
 h1 {
-    font-size: 2.5em;
+display: none;
 }
 
 /* Coffee machine */
@@ -135,12 +147,12 @@ h1 {
     justify-content: center;
 }
 
-.coffee-machine .display a {
+.coffee-machine .display button {
     width: 8em;
     height: 3em;
     color: var(--c-primary-75);
     background-color: var(--c-primary-0);
-    border: 0.1em solid var(--c-primary-25);
+    border: 0.2em solid var(--c-primary-25);
     border-radius: var(--u-micro);
     display: flex;
     align-items: center;
@@ -149,11 +161,11 @@ h1 {
     transition: var(--a-default);
 }   
 
-.coffee-machine .display a:hover {
+.coffee-machine .display button:hover {
     background-color: var(--c-primary-25);
 }
 
-.coffee-machine .display a:focus {
+.coffee-machine .display button:focus {
     background-color: var(--c-primary-25);
 }
 
@@ -181,16 +193,29 @@ h1 {
     left: var(--u-default);
 }
 
-.coffee-machine .dispenser .left-dispenser::after, .right-dispenser::after  {
-    content:'';
+.coffee-machine .left-dispenser-output, .right-dispenser-output {
     width: 1em;
     height: 0em;
-    background-color: var(--c-tertiary-50);
     position: absolute;
     z-index: 0;
     top: 1em;
     left: 0.25em;
+}
+
+.liquid {
     animation: liquid 10s 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.coffee {
+    background-color: var(--c-tertiary-50);
+}
+
+.tea {
+    background-color: var(--c-tea);
+}
+
+.water {
+    background-color: var(--c-water);
 }
 
 @keyframes liquid {
@@ -272,15 +297,19 @@ h1 {
 .squad-members {
    width: 25em;
    height: 12em;
+   background-color: var(--c-primary-75);
+   border: 0.22em solid var(--c-primary-50);
+   border-radius: var(--u-small);
    margin: 0 auto;
    padding: var(--u-default);
-   overflow: hidden;
+   overflow-x: hidden;
+   overflow-y: scroll;
 }
 
 .squad-members ul {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: var(--u-medium)
 }
@@ -288,7 +317,13 @@ h1 {
 .squad-members ul img {
     width: 4em;
     height: 4em;
+    border: 0.2em solid var(--c-primary-50);
     border-radius: var(--b-round);
+}
+
+.squad-members li {
+    width: 4em;
+    height: 4em;
 }
 
 .squad-members a {
@@ -306,11 +341,40 @@ h1 {
     overflow: visible;
 }
 
-.squad-members span {
+.squad-members h2 {
     opacity: 0;
     transition: var(--a-default);
 }
 
 .squad-members a:hover span {
     opacity: 1;
+}
+
+
+@media (min-width: 48em) {
+
+    h1 {
+        width: 40vw;
+        font-size: 2.5em;
+        line-height: 1.1;
+        color: var(--c-primary-75);
+        display: block;
+        position: absolute;
+        left: 1em;
+        bottom: 6em;
+    }
+    
+    .coffee-machine {
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 8em;
+    }
+    
+    .squad-members {
+        margin: 0;
+        position: absolute;
+        bottom: 2em;
+        right: 4em;
+    }
 }

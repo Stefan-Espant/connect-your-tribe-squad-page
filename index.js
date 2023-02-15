@@ -1,9 +1,11 @@
 // Importeer express uit de node_modules map
 import express, { response } from 'express'
 
-const url = 'https://whois.fdnd.nl/api/v1/member/stefanvanderkort'
-const data = await fetch(url).then((response) => response.json())
-console.log(data.member.name)
+// const url = 'https://whois.fdnd.nl/api/v1/member/stefanvanderkort'
+const url = 'https://whois.fdnd.nl/api/v1/squad/squat-c-2022'
+const data = await fetch(url)
+.then((response) => response.json())
+console.log(data);
 
 // Maak een nieuwe express app aan
 const app = express()
