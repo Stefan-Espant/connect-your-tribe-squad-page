@@ -1,29 +1,27 @@
 import express, { response } from 'express'
 
-// const url = 'https://whois.fdnd.nl/api/v1/member/stefanvanderkort'
 const url = 'https://whois.fdnd.nl/api/v1/squad/'
 
-// Maak een nieuwe express app aan
+// Maak een nieuwe express app
 const app = express()
- 
-// Stel ejs in als template engine en geef de 'views' map door
+
+// Stel in hoe we express gebruiken
 app.set('view engine', 'ejs')
 app.set('views', './views')
-
-// Gebruik de map 'public' voor statische resources
 app.use(express.static('public'))
 
 // Maak een route voor de index
-app.get('/', function (req, res) {
+app.get('/', (request, response) => {
+  console.log(request.query.squad)
 
-    let slug = req.query.squad || 'squad-c-2022'
-    let orderBy = req.query.orderBy || 'name'
-    let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC'
-  
-    fetchJson(squadUrl).then((data) => {
-      res.render('index', data)
-    })
+  let slug = request.query.squad || 'squat-c-2022'
+  let orderBy = request.query.orderBy || 'surname'
+  let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC'
+
+  fetchJson(squadUrl).then((data) => {
+    response.render('index', data)
   })
+})
 
 // Stel het poortnummer in waar express op gaat luisteren
 app.set('port', process.env.PORT || 8000)
