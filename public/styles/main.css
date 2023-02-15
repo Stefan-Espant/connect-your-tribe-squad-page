@@ -28,7 +28,6 @@ button:focus-visible {
 }
 
 :root {
-
     /* Animations */
     --a-quick: 0.2s;
     --a-default: 0.3s;
@@ -40,17 +39,17 @@ button:focus-visible {
     /* Colors */
     --c-default: #fafafa;
     --c-invert: #121212;
-    --c-primary-0: #F0F2F4;
-    --c-primary-25: #C6CCD7;
-    --c-primary-50: #8A96AD;
-    --c-primary-75: #5E6D87;
-    --c-primary-100: #404A5C;
-    --c-secundary-0: #e0b5b5;
-    --c-secundary-50: #996C6C;
-    --c-secundary-100: #8B5A5A;
-    --c-tertiary-50: #7c624c;
+    --c-primary-0: #f0f2f4;
+    --c-primary-25: #9bb3df;
+    --c-primary-50: #647fb3;
+    --c-primary-75: #294d90;
+    --c-primary-100: #2e3f5f;
+    --c-secundary-0: #e17878;
+    --c-secundary-50: #bf3c3c;
+    --c-secundary-100: #8b5a5a;
+    --c-tertiary-50: #7d593b;
     --c-tea: #e7e2596a;
-    --c-water: #6ea5bd;
+    --c-water: #82c0db;
 
     /* Layout */
     --w-dix: 10vw;
@@ -70,7 +69,7 @@ button:focus-visible {
 }
 
 body {
-    /* overflow: hidden; */
+    overflow-y: hidden;
     background-color: var(--c-primary-0);
     font-family: open sans, sans-serif;
 }
@@ -102,8 +101,16 @@ svg {
 /* Typography */
 
 h1 {
-display: none;
+    color: var(--c-secundary-50);
+    display: none;
 }
+
+h2 {
+    font-size: 1em;
+    color: var(--c-primary-100);
+}
+
+
 
 /* Coffee machine */
 .coffee-machine {
@@ -148,8 +155,8 @@ display: none;
 }
 
 .coffee-machine .display button {
-    width: 8em;
-    height: 3em;
+    width: 10em;
+    height: 4em;
     color: var(--c-primary-75);
     background-color: var(--c-primary-0);
     border: 0.2em solid var(--c-primary-25);
@@ -159,10 +166,18 @@ display: none;
     justify-content: center;
     gap: var(--u-small);
     transition: var(--a-default);
-}   
+}
 
 .coffee-machine .display button:hover {
     background-color: var(--c-primary-25);
+}
+
+.coffee-machine .display button:active {
+    background-color: var(--c-primary-75);
+    color: var(--c-primary-25);
+}
+.coffee-machine .display button:active svg {
+    fill: var(--c-primary-25);
 }
 
 .coffee-machine .display button:focus {
@@ -179,10 +194,11 @@ display: none;
     margin: 0 auto;
 }
 
-.coffee-machine .dispenser .left-dispenser, .right-dispenser {
+.coffee-machine .dispenser .left-dispenser,
+.right-dispenser {
     width: 1.5em;
     height: 1em;
-    background-color: var(--c-secundary-100);
+    background-color: var(--c-secundary-0);
     border-radius: 0 0 var(--u-small) var(--u-small);
     position: absolute;
     z-index: 2;
@@ -193,7 +209,8 @@ display: none;
     left: var(--u-default);
 }
 
-.coffee-machine .left-dispenser-output, .right-dispenser-output {
+.coffee-machine .left-dispenser-output,
+.right-dispenser-output {
     width: 1em;
     height: 0em;
     position: absolute;
@@ -228,13 +245,12 @@ display: none;
     }
 
     98% {
-        height: 1em;  
+        height: 1em;
     }
 
     100% {
         height: 0em;
     }
-    
 }
 
 .coffee-machine .dispenser .right-dispenser {
@@ -271,7 +287,7 @@ display: none;
 }
 
 .coffee-machine .mugear::after {
-    content:'';
+    content: "";
     width: 1em;
     height: 1em;
     background-color: var(--c-primary-100);
@@ -295,86 +311,128 @@ display: none;
 /* Squad member list */
 
 .squad-members {
-   width: 25em;
-   height: 12em;
-   background-color: var(--c-primary-75);
-   border: 0.22em solid var(--c-primary-50);
-   border-radius: var(--u-small);
-   margin: 0 auto;
-   padding: var(--u-default);
-   overflow-x: hidden;
-   overflow-y: scroll;
+    height: 12.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--u-small);
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .squad-members ul {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: var(--u-medium)
-}
-
-.squad-members ul img {
-    width: 4em;
-    height: 4em;
-    border: 0.2em solid var(--c-primary-50);
-    border-radius: var(--b-round);
-}
-
-.squad-members li {
-    width: 4em;
-    height: 4em;
-}
-
-.squad-members a {
-    width: 4em;
-    height: 4em;
+    width: 80vw;
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: var(--u-small);
-    overflow: hidden;
+    justify-content: flex-start;
+    position: relative;
+    padding: 1em;
+    gap: var(--u-default);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: none;
+    scrollbar-width: none;
+}
+
+/* .squad-members ul::before {
+    content:'';
+    height: 100%;
+    width:50px;
+    background:linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:1;
+}
+
+.squad-members ul::after {
+    content:'';
+    height: 100%;
+    width:50px;
+    background:linear-gradient(-90deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:1;
+} */
+
+
+.squad-members li {
+    width: 10em;
+    height: 12em;
+    display: block;
+    background-color: var(--c-primary-0);
+    box-shadow: 0.1em 0.1em 0em 0.1em var(--c-primary-50);
+    border-radius: var(--u-medium);
+    padding: var(--u-default);
+    scroll-snap-align: center;
+}
+
+.squad-members a li {
     transition: var(--a-default);
+    border-bottom: var(--u-nano) solid var(--c-primary-25);
 }
 
-.squad-members a:hover {
-    width: 15em;
-    overflow: visible;
-}
-
-.squad-members h2 {
-    opacity: 0;
+.squad-members a:hover li {
     transition: var(--a-default);
+    border-bottom: var(--u-small) solid var(--c-primary-50);
 }
 
-.squad-members a:hover span {
-    opacity: 1;
+.squad-members a:focus li {
+    transition: var(--a-default);
+    border-bottom: var(--u-small) solid var(--c-primary-50);
 }
 
+.squad-members article {
+    width: 100%;
+    height: 4em;
+}
+
+.squad-members img {
+    width: 4em;
+    height: 4em;
+    display: block;
+    border: 0.1em solid var(--c-primary-25);
+    border-radius: var(--u-small);
+    margin-bottom: var(--u-small);
+}
+
+.squad-members img {
+    display: block;
+}
+
+.squad-members svg {
+    width: 4em;
+    height: 4em;
+    fill: var(--c-primary-50);
+}
 
 @media (min-width: 48em) {
-
     h1 {
-        width: 40vw;
         font-size: 2.5em;
+        display: block;
+    }
+
+    .title {
+        width: 40vw;
         line-height: 1.1;
-        color: var(--c-primary-75);
         display: block;
         position: absolute;
-        left: 1em;
-        bottom: 6em;
+        left: 8vw;
+        bottom: 16em;
     }
-    
+
     .coffee-machine {
         margin: 0;
         position: absolute;
         bottom: 0;
-        right: 8em;
+        right: 20vw;
     }
-    
-    .squad-members {
-        margin: 0;
-        position: absolute;
-        bottom: 2em;
-        right: 4em;
+
+    .squad-members ul {
+        width: 66vw;
+        position: relative;
     }
 }
