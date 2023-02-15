@@ -16,7 +16,7 @@ app.use(express.static('public'))
 // Maak een route voor de index
 app.get('/', function (req, res) {
 
-    let slug = req.query.squad || 'squad-a-2022'
+    let slug = req.query.squad || 'squad-c-2022'
     let orderBy = req.query.orderBy || 'name'
     let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC'
   
