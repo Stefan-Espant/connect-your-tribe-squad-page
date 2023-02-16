@@ -1,8 +1,8 @@
 <div class="squad-members">
   <ul>
     <% squad.members.forEach(member => { %>
-    <a href="<%= member.website %> ">
       <li>
+        <a href="<%= member.website %> ">
           <% if (member.avatar) { %>
           <img
             src="<%= member.avatar %>"
@@ -30,8 +30,8 @@
             member.surname %>
           </h2>
         </article>
-      </li>
     </a>
+      </li>
     <% }) %>
   </ul>
 </div>

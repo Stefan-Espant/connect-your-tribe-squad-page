@@ -2,15 +2,15 @@ import express, { response } from 'express'
 
 const url = 'https://whois.fdnd.nl/api/v1/squad/'
 
-// Maak een nieuwe express app
+// Creates a new xpress app
 const app = express()
 
-// Stel in hoe we express gebruiken
+// Configure how I use Express
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 
-// Maak een route voor de index
+// Makes a route for the index
 app.get('/', (request, response) => {
   console.log(request.query.squad)
 
@@ -23,15 +23,16 @@ app.get('/', (request, response) => {
   })
 })
 
-// Stel het poortnummer in waar express op gaat luisteren
+// Configure what port number express will listen on
 app.set('port', process.env.PORT || 8000)
 
-// Start express op, haal het ingestelde poortnummer op
+// Launches Express & receives the configured port number
 app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
+// Fetch the JSON data after it has been approved
 async function fetchJson(url) {
     return await fetch(url)
       .then((response) => response.json())

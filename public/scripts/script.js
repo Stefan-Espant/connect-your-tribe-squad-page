@@ -1,4 +1,4 @@
-// Sound effects loaded
+// Sound effects loaded made with an array & strings
 const coffeeAudio = [
     new Audio('https://nichtrijder.pepijnblom.com/sounds/krijg%20nou%20een%20bakkie%20pleur.mp3'),
     new Audio('./assets/audio/de-eerste-indruk-is-romig.mp3')
@@ -33,6 +33,7 @@ dispenser.forEach(dispenserSelector => {
   })
 });
 
+// Will play the tea soundeffect
 teaButton.addEventListener("click", () => {
     teaAudio.play();
 
@@ -43,6 +44,7 @@ dispenser.forEach(dispenserSelector => {
   })
   });
 
+// Will play the water soundeffect
 waterButton.addEventListener("click", () => {
     waterAudio.play();
 
