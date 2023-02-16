@@ -355,17 +355,17 @@ h2 {
     scroll-snap-align: center;
 }
 
-.squad-members a li {
+.squad-members li a {
     transition: var(--a-default);
     border-bottom: var(--u-nano) solid var(--c-primary-25);
 }
 
-.squad-members a:hover li {
+.squad-members li a:hover {
     transition: var(--a-default);
     border-bottom: var(--u-small) solid var(--c-primary-50);
 }
 
-.squad-members a:focus li {
+.squad-members li a:focus {
     transition: var(--a-default);
     border-bottom: var(--u-small) solid var(--c-primary-50);
 }
