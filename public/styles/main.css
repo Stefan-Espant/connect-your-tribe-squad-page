@@ -69,7 +69,7 @@ button:focus-visible {
 }
 
 body {
-    overflow-y: hidden;
+    overflow-y: scroll;
     background-color: var(--c-primary-0);
     font-family: open sans, sans-serif;
 }
@@ -78,18 +78,22 @@ body {
 
 section:first-child {
     width: var(--w-full);
-    height: auto;
-    position: absolute;
-    bottom: 15em;
+    height: 66vh;
+    position: relative;
+    top: 0;
+    overflow-y: scroll;
+}
+
+section:first-child h2 {
+    display: none;
 }
 
 section:last-child {
     width: var(--w-full);
-    height: 15em;
+    height: 38vh;
     background-color: var(--c-primary-25);
     padding: var(--u-default);
     position: absolute;
-    bottom: 0;
 }
 
 /* icons */
@@ -101,6 +105,7 @@ svg {
 /* Typography */
 
 h1 {
+    font-size: 2.5em;
     color: var(--c-secundary-50);
     display: none;
 }
@@ -110,14 +115,16 @@ h2 {
     color: var(--c-primary-100);
 }
 
-
-
 /* Coffee machine */
+
 .coffee-machine {
     width: fit-content;
+    height: fit-content;
     display: block;
-    margin: var(--u-default) auto 0;
-    position: relative;
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .coffee-machine .body {
@@ -125,6 +132,7 @@ h2 {
     height: 32em;
     background-color: var(--c-primary-50);
     border-radius: 0.5em 0.5em 0 0;
+    position: relative;
     padding: var(--u-large);
 }
 
@@ -336,29 +344,6 @@ h2 {
     scrollbar-width: none;
 }
 
-/* .squad-members ul::before {
-    content:'';
-    height: 100%;
-    width:50px;
-    background:linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-    position: absolute;
-    top:0;
-    right:0;
-    z-index:1;
-}
-
-.squad-members ul::after {
-    content:'';
-    height: 100%;
-    width:50px;
-    background:linear-gradient(-90deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-    position: absolute;
-    top:0;
-    right:0;
-    z-index:1;
-} */
-
-
 .squad-members li {
     width: 10em;
     height: 12em;
@@ -394,7 +379,7 @@ h2 {
     width: 4em;
     height: 4em;
     display: block;
-    border: 0.1em solid var(--c-primary-25);
+    border: 0.1em solid var(--c-primary-0);
     border-radius: var(--u-small);
     margin-bottom: var(--u-small);
 }
@@ -408,31 +393,83 @@ h2 {
     height: 4em;
     fill: var(--c-primary-50);
 }
+/* Media queries for height */
+
+@media (min-height: 10em) {
+    .coffee-machine {
+        top: unsvar(--u-large);
+        bottom: unset;
+    }
+}   
+
+@media (min-height: 40em) {
+
+    .coffee-machine {
+        position: fixed;
+        top: unset;
+        bottom: 0;
+    }
+
+    section:first-child {
+        height: 90vh;
+    }
+
+    section:last-child {
+        height: 35vh;
+    }   
+}
+
+/* Media queries for width */
 
 @media (min-width: 48em) {
+
+    body {
+        overflow-y: auto;
+    }
+    
     h1 {
-        font-size: 2.5em;
+        display: block;
+    }
+
+    section:first-child h2 {
         display: block;
     }
 
     .title {
         width: 40vw;
         line-height: 1.1;
-        display: block;
-        position: absolute;
-        left: 8vw;
-        bottom: 16em;
+        display: grid;
+        position: fixed;
+        left: 20%;
+        top: 40%;
+        transform: translate(-20%, -40%);
+        gap: var(--u-default);
     }
 
     .coffee-machine {
-        margin: 0;
+        height: fit-content;
         position: absolute;
-        bottom: 0;
-        right: 20vw;
+        left: 75%;
+        transform: translate(-75%);
     }
 
     .squad-members ul {
         width: 66vw;
         position: relative;
+    }
+}
+
+@media (min-width: 60em) {
+
+    section:first-child {
+        height: 80vh;
+    }
+
+    section:last-child {
+        height: 40vh;
+    }
+
+    .squad-members {
+        height: 15em;
     }
 }

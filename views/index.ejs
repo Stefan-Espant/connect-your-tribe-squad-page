@@ -3,10 +3,8 @@
 <body>
 <main>
     <section>
-        <div class="title">
-            <h1>Kies een drankje</h1>
-            <h2>en maak kennis met <%= squad.name %></h2>
-        </div>
+        <%- include('./partials/page-title.ejs') %>
+
         <%- include('./partials/coffee-machine.ejs') %>
     </section>
     <section>
