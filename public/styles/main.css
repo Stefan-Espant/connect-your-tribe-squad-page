@@ -443,7 +443,7 @@ h2 {
         left: 20%;
         top: 40%;
         transform: translate(-20%, -40%);
-        gap: var(--u-default);
+        gap: var(--u-small);
     }
 
     .coffee-machine {
