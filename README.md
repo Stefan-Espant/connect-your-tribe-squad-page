@@ -1,6 +1,6 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+![Schermafbeelding 2023-02-16 om 15 37 12](https://user-images.githubusercontent.com/89298385/219395331-77f77136-97b2-4af4-90c9-29059d605a8b.png)
 
-# Titel
+# Dynamische Squadpagina 
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## Inhoudsopgave
@@ -26,6 +26,7 @@
 ## Gebruik
 
 ## Bronnen
+[docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
 ## Licentie
 
