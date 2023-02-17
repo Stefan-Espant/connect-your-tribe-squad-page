@@ -15,7 +15,7 @@ a {
     cursor: pointer;
 }
 
-a:focus-visible {
+a:focus-visible, ul:focus-visible {
     outline: none;
 }
 
@@ -106,13 +106,23 @@ svg {
 
 h1 {
     font-size: 2.5em;
-    color: var(--c-secundary-50);
+    color: var(--c-primary-75);
     display: none;
+}
+
+h1 small {
+    font-size: 66%;
+    font-weight: normal;
+    color: var(--c-primary-100);
 }
 
 h2 {
     font-size: 1em;
     color: var(--c-primary-100);
+}
+
+h2 small {
+    font-size: 1em;
 }
 
 /* Coffee machine */
@@ -148,12 +158,22 @@ h2 {
     width: auto;
     height: 100%;
     background-color: var(--c-default);
-    border-radius: var(--u-micro);
+    border-radius: var(--u-small);
 }
 
 .coffee-machine .display ul {
     height: 100%;
 }
+
+ul {
+    border: 0.2em solid var(--c-primary-25);
+    border-radius: var(--u-small);
+    transition: var(--a-default);
+}
+
+ul:focus {
+    border: 0.2em solid var(--c-primary-50);
+} 
 
 .coffee-machine .display li {
     height: 33%;
@@ -482,7 +502,7 @@ h2 {
     }
 
     section:last-child {
-        height: 33vh;
+        height: 40vh;
     }
 
     .squad-members {
