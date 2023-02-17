@@ -108,6 +108,7 @@ h1 {
     font-size: 2.5em;
     color: var(--c-primary-75);
     display: none;
+    max-width: 11em;
 }
 
 h1 small {
