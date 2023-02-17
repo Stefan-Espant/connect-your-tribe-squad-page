@@ -396,8 +396,16 @@ h2 {
 /* Media queries for height */
 
 @media (min-height: 10em) {
+    section:first-child {
+        height: 90vh;
+    }
+
+    section:last-child {
+        height: 40vh;
+    }  
+
     .coffee-machine {
-        top: unsvar(--u-large);
+        top: var(--u-large);
         bottom: unset;
     }
 }   
@@ -407,16 +415,23 @@ h2 {
     .coffee-machine {
         position: fixed;
         top: unset;
-        bottom: 0;
-    }
-
-    section:first-child {
-        height: 90vh;
+        bottom: 10vh;
     }
 
     section:last-child {
         height: 35vh;
     }   
+}
+
+@media (min-height: 48em) {
+
+    section:first-child {
+        height: 70vh;
+    }
+
+    .coffee-machine {
+        top: unset;
+    }
 }
 
 /* Media queries for width */
@@ -448,9 +463,10 @@ h2 {
 
     .coffee-machine {
         height: fit-content;
-        position: absolute;
         left: 75%;
         transform: translate(-75%);
+        bottom: 20vh;
+        top: unset;
     }
 
     .squad-members ul {
@@ -466,7 +482,7 @@ h2 {
     }
 
     section:last-child {
-        height: 40vh;
+        height: 33vh;
     }
 
     .squad-members {
