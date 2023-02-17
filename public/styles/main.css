@@ -126,6 +126,10 @@ h2 small {
     font-size: 1em;
 }
 
+small {
+    color: var(--c-primary-100);
+}
+
 /* Coffee machine */
 
 .coffee-machine {
