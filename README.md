@@ -28,6 +28,12 @@
 ## Bronnen
 [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
+https://foolishdeveloper.com/how-to-play-sound-on-click-using-javascript/
+
+https://internetgekki.es/
+
+https://nichtrijder.pepijnblom.com/
+
 ## Licentie
 
 ![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
