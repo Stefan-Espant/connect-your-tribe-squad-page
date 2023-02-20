@@ -33,9 +33,6 @@ button:focus-visible {
     --a-default: 0.3s;
     --a-medium: 0.6s;
 
-    /* Borders */
-    --b-round: 50%;
-
     /* Colors */
     --c-default: #fafafa;
     --c-invert: #121212;
@@ -66,6 +63,7 @@ button:focus-visible {
     --u-medium: 0.5em;
     --u-default: 1em;
     --u-large: 2em;
+    --u-round: 50%;
 }
 
 body {
@@ -78,7 +76,8 @@ body {
 
 section:first-child {
     width: var(--w-full);
-    height: 66vh;
+    height: 50vh;
+    background-attachment: fixed;
     position: relative;
     top: 0;
     overflow-y: scroll;
@@ -90,7 +89,7 @@ section:first-child h2 {
 
 section:last-child {
     width: var(--w-full);
-    height: 38vh;
+    height: auto;
     background-color: var(--c-primary-25);
     padding: var(--u-default);
     position: absolute;
@@ -108,7 +107,7 @@ h1 {
     font-size: 2.5em;
     color: var(--c-primary-75);
     display: none;
-    max-width: 11em;
+    line-height: 1.4;
 }
 
 h1 small {
@@ -127,7 +126,42 @@ h2 small {
 }
 
 small {
+    display: block;
     color: var(--c-primary-100);
+}
+
+.title {
+    width: 40vw;
+    line-height: 1.1;
+    display: block;
+    position: fixed;
+    left: 20%;
+    top: 30%;
+    transform: translate(-20%, -30%);
+    gap: var(--u-small);
+}
+
+/* Layout */
+
+header {
+    padding: var(--u-default);
+}
+
+header ul {
+    display: flex;
+    border: none;
+    gap: var(--u-default);
+}
+
+header a {
+    color: var(--c-primary-75);
+    border-bottom: 0.2em solid var(--c-primary-0);
+    transition: var(--a-default);
+}
+
+header a:hover, a:focus {
+    border-bottom: 0.2em solid var(--c-primary-75);
+    transition: var(--a-default);
 }
 
 /* Coffee machine */
@@ -146,7 +180,7 @@ small {
     width: 16em;
     height: 32em;
     background-color: var(--c-primary-50);
-    border-radius: 0.5em 0.5em 0 0;
+    border-radius: var(--u-medium);
     position: relative;
     padding: var(--u-large);
 }
@@ -344,7 +378,6 @@ ul:focus {
 /* Squad member list */
 
 .squad-members {
-    height: 12.5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,9 +403,10 @@ ul:focus {
 }
 
 .squad-members li {
-    width: 10em;
-    height: 12em;
-    display: block;
+    width: 12em;
+    height: 18em;
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--c-primary-0);
     box-shadow: 0.1em 0.1em 0em 0.1em var(--c-primary-50);
     border-radius: var(--u-medium);
@@ -396,7 +430,7 @@ ul:focus {
 }
 
 .squad-members article {
-    width: 100%;
+    width: 12em;
     height: 4em;
 }
 
@@ -411,23 +445,27 @@ ul:focus {
 
 .squad-members img {
     display: block;
+    background-color: darkgray;
 }
 
 .squad-members svg {
     width: 4em;
     height: 4em;
     fill: var(--c-primary-50);
+    transition: var(--a-default);
 }
+
+.squad-members a:hover svg {
+    transform: rotateZ(-33deg);
+    fill: var(--c-primary-75);
+}
+
 /* Media queries for height */
 
 @media (min-height: 10em) {
     section:first-child {
-        height: 90vh;
+        min-height: 40em;
     }
-
-    section:last-child {
-        height: 40vh;
-    }  
 
     .coffee-machine {
         top: var(--u-large);
@@ -438,14 +476,9 @@ ul:focus {
 @media (min-height: 40em) {
 
     .coffee-machine {
-        position: fixed;
         top: unset;
         bottom: 10vh;
     }
-
-    section:last-child {
-        height: 35vh;
-    }   
 }
 
 @media (min-height: 48em) {
@@ -457,6 +490,13 @@ ul:focus {
     .coffee-machine {
         top: unset;
     }
+}
+
+@media (min-height: 65em) {
+    section:first-child {
+        height: 70vh;
+    }
+
 }
 
 /* Media queries for width */
@@ -475,42 +515,16 @@ ul:focus {
         display: block;
     }
 
-    .title {
-        width: 40vw;
-        line-height: 1.1;
-        display: grid;
-        position: fixed;
-        left: 20%;
-        top: 40%;
-        transform: translate(-20%, -40%);
-        gap: var(--u-small);
-    }
-
     .coffee-machine {
         height: fit-content;
         left: 75%;
         transform: translate(-75%);
-        bottom: 20vh;
-        top: unset;
+        bottom: unset;
+        top: 4em;
     }
 
     .squad-members ul {
         width: 66vw;
         position: relative;
-    }
-}
-
-@media (min-width: 60em) {
-
-    section:first-child {
-        height: 80vh;
-    }
-
-    section:last-child {
-        height: 40vh;
-    }
-
-    .squad-members {
-        height: 15em;
     }
 }

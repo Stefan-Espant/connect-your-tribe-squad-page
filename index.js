@@ -1,8 +1,9 @@
 import express, { response } from 'express'
 
+const mainUrl = 'https://whois.fdnd.nl/api/v1/squads'
 const url = 'https://whois.fdnd.nl/api/v1/squad/'
 
-// Creates a new xpress app
+// Creates a new Express app
 const app = express()
 
 // Configure how I use Express
