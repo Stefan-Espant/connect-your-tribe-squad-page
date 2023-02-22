@@ -12,7 +12,7 @@ app.use(express.static('public'))
 
 // Makes a route for the index
 app.get('/', async (request, response) => {
-	let { id } = request.query
+	let { id, direction } = request.query
 
 	let squads
 	let squad
@@ -25,7 +25,8 @@ app.get('/', async (request, response) => {
 	squads = squads.filter((item) => item.slug.startsWith('squa'))
 
 	if (!id) id = squads[1].id
-	await getSquad({ id, orderBy: 'surname' })
+	if (!direction) direction = 'ASC'
+	await getSquad({ id, orderBy: 'surname', direction })
 		.then((response) => squad = response)
 
 	response.render('index', { squads, squad, members: squad.members })
