@@ -1,4 +1,4 @@
-![Schermafbeelding 2023-02-16 om 15 37 12](https://user-images.githubusercontent.com/89298385/219395331-77f77136-97b2-4af4-90c9-29059d605a8b.png)
+<img width="1440" alt="Schermafbeelding 2023-02-21 om 10 02 22" src="https://user-images.githubusercontent.com/89298385/220298039-a23410cc-24ca-4806-9483-3349eedab0d0.png">
 
 # Dynamische Squadpagina 
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
