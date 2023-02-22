@@ -39,3 +39,6 @@ async function fetchJson(url) {
       .then((response) => response.json())
       .catch((error) => error)
   }
+
+// Filteren van studenten op basis van voorkeur
+const drinks = ['coffee','tea','water']

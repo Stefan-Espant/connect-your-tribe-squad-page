@@ -75,12 +75,12 @@ body {
 /* Lay-out */
 
 section:first-child {
-    width: var(--w-full);
+    width: 100%;
     height: 50vh;
     background-attachment: fixed;
     position: relative;
     top: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 section:first-child h2 {
@@ -404,9 +404,8 @@ ul:focus {
 
 .squad-members li {
     width: 12em;
-    height: 18em;
-    display: flex;
-    flex-wrap: wrap;
+    height: 15em;
+    display: block;
     background-color: var(--c-primary-0);
     box-shadow: 0.1em 0.1em 0em 0.1em var(--c-primary-50);
     border-radius: var(--u-medium);
@@ -414,24 +413,16 @@ ul:focus {
     scroll-snap-align: center;
 }
 
-.squad-members a li {
+.squad-members a {
     transition: var(--a-default);
-    border-bottom: var(--u-nano) solid var(--c-primary-25);
-}
-
-.squad-members a:hover li {
-    transition: var(--a-default);
-    border-bottom: var(--u-small) solid var(--c-primary-50);
-}
-
-.squad-members a:focus li {
-    transition: var(--a-default);
-    border-bottom: var(--u-small) solid var(--c-primary-50);
+    border-bottom: var(--u-nano) solid var(--c-primary-0);
+    position: absolute;
+    bottom: 1.25em;
 }
 
 .squad-members article {
-    width: 12em;
-    height: 4em;
+    width: 8em;
+    height: auto;
 }
 
 .squad-members img {
@@ -443,16 +434,20 @@ ul:focus {
     margin-bottom: var(--u-small);
 }
 
-.squad-members img {
-    display: block;
-    background-color: darkgray;
+.squad-members .anonymous {
+    width: 4em;
+    height: 4em;
+    border-radius: var(--u-micro);
+    margin-bottom: var(--u-small);
+    transform: scale(1);
 }
 
 .squad-members svg {
-    width: 4em;
-    height: 4em;
+    width: 2.75em;
+    height: 2.75em;
     fill: var(--c-primary-50);
     transition: var(--a-default);
+    transform: scale(0.72);
 }
 
 .squad-members a:hover svg {

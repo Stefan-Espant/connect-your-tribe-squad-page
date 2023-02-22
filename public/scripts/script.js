@@ -48,7 +48,7 @@ dispenser.forEach(dispenserSelector => {
 waterButton.addEventListener("click", () => {
     waterAudio.play();
 
-    // Add the 'liquid' class to both coffee dispenser elements
+// Add the 'liquid' class to both coffee dispenser elements
 dispenser.forEach(dispenserSelector => {
     const dispenserElement = document.querySelector(dispenserSelector);
     dispenserElement.classList.add('liquid','water');
