@@ -63,7 +63,6 @@ function buildScrollPanel() {
 	const $listItems = document.querySelectorAll('.squad-members > ul > li');
 
 	$listItems.forEach(($listItem) => {
-
 		const timeline = new ViewTimeline({
 			source: $listView,
 			subject: $listItem,
