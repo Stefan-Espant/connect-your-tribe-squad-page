@@ -11,17 +11,6 @@ const waterAudio = new Audio('./assets/audio/water.m4a')
 const liquid = document.querySelector('.liquid')
 const dispenser = ['.left-dispenser-output', '.right-dispenser-output']
 
-// Buttons for the sound effects
-const coffeeButton = document.querySelector('#coffeeEvent')
-const teaButton = document.querySelector('#teaEvent')
-const waterButton = document.querySelector('#waterEvent')
-
-// Color liquids
-const coffeeColor = document.querySelector('.coffee')
-
-const teaColor = document.querySelector('.tea')
-const waterColor = document.querySelector('.water')
-
 addEventListener('click', (event) => {
 	const { target } = event
 
@@ -63,11 +52,11 @@ function playWater() {
 
 function setDispencerClass(drink) {
 	dispenser.forEach(dispenserSelector => {
-		const dispenserElement = document.querySelector(dispenserSelector);
-		dispenserElement.classList.add('liquid', drink);
+		const dispenserElement = document.querySelector(dispenserSelector)
+		dispenserElement.classList.add('liquid', drink)
+		setTimeout(() => dispenserElement.classList.remove('liquid', drink), 3000);
 	})
 }
-
 
 function buildScrollPanel() {
 	const $listView = document.querySelector('.squad-members > ul');
