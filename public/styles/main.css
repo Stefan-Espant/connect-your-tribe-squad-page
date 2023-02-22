@@ -87,6 +87,14 @@ section:first-child {
     overflow-y: auto;
 }
 
+section:first-child p {
+    color: var(--c-primary-75);
+    display: flex;
+    align-items: center;
+    gap: var(--u-small);
+    padding: var(--u-default) 0;
+}
+
 section:first-child h2 {
     display: none;
 }
