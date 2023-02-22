@@ -1,0 +1,16 @@
+{
+    "drinks": {
+        "coffee": {
+            "slug": "amir-amerian"
+        },
+
+        "tea": {
+            "slug": "stefanvanderkort"
+        },
+
+        "water": {
+            "slug": "siem-postmus"
+        }
+
+    }
+}

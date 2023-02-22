@@ -419,13 +419,11 @@ ul:focus {
 .squad-members a {
     transition: var(--a-default);
     border-bottom: var(--u-nano) solid var(--c-primary-0);
-    position: absolute;
-    bottom: 1.25em;
 }
 
 .squad-members article {
     width: 8em;
-    height: auto;
+    height: 4em;
 }
 
 .squad-members img {

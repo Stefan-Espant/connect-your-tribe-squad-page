@@ -1,8 +1,9 @@
 import express from 'express'
 
+// Haalt de API gegevens op uit de bovenste laag: de root.
 const url = 'https://whois.fdnd.nl/api/v1/'
 
-// Creates a new Express app
+// Creëert een nieuwe express app
 const app = express()
 
 // Configure how I use Express
@@ -10,21 +11,21 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 
-// Makes a route for the index
+// Maakt een route voor de index
 app.get('/', async (request, response) => {
 	let { id, direction } = request.query
 
 	let squads
 	let squad
 
-	/* Get all squads */
+	/* Haalt alle squads op */
 	await getSquads()
 		.then((response) => squads = response)
 
-	/* Filter out the squads */
+	/* Filter uit de squads */
 	squads = squads.filter((item) => item.slug.startsWith('squa'))
 
-	if (!id) id = squads[1].id
+	if (!id) id = squads[2].id
 	if (!direction) direction = 'ASC'
 	await getSquad({ id, orderBy: 'surname', direction })
 		.then((response) => squad = response)
@@ -32,22 +33,23 @@ app.get('/', async (request, response) => {
 	response.render('index', { squads, squad, members: squad.members })
 })
 
-// Configure what port number express will listen on
+// Configureert op welke poortnummer express naar luisteren zal
 app.set('port', process.env.PORT || 8000)
 
-// Launches Express & receives the configured port number
+
+// Lanceert Express & ontvangt de geconfigureerde poortnummer
 app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
+  // Toont een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-// Fetch the JSON data after it has been approved
+// JSON gegevens ophalen nadat ze zijn goedgekeurd
 
 /**
- * Default get function
- * @param {*} endpoint path of the endpoint
- * @param {*} queryParams filter values
- * @returns Fetch with parsed JSON Data
+ * Standaard get functie
+ * @param {*} endpoint pad van het eindpunt
+ * @param {*} queryParams filter waardes
+ * @returns Ophalen met geparseerde JSON-gegevens
  */
 async function fetchJson(endpoint, queryParams) {
 	let queryParamsString = ''
@@ -59,9 +61,9 @@ async function fetchJson(endpoint, queryParams) {
 }
 
 /**
- * Get function to get all squads.
- * @param {*} queryParams filter values
- * @returns Array with squads
+ * Krijg functie om alle squads te krijgen.
+ * @param {*} queryParams filter waardes
+ * @returns Array met squads
  */
 function getSquads() {
 	const endpoint = 'squads'
@@ -71,9 +73,9 @@ function getSquads() {
 }
 
 /**
- * Get function to get a single squad with members.
- * @param {*} queryParams filter values
- * @returns Single squad
+ * Krijg functie met een enkele squad met members.
+ * @param {*} queryParams filter waardes
+ * @returns Enkele squad
  */
 function getSquad(queryParams) {
 	const endpoint = 'squad'
@@ -83,4 +85,5 @@ function getSquad(queryParams) {
 }
 
 // Filteren van studenten op basis van voorkeur
-const drinks = ['coffee','tea','water']
+let drinks = ['coffee','tea','water']
+
