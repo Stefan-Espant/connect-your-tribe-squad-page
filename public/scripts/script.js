@@ -16,6 +16,7 @@ const waterButton = document.querySelector('#waterEvent')
 
 // Color liquids
 const coffeeColor = document.querySelector('.coffee')
+
 const teaColor = document.querySelector('.tea')
 const waterColor = document.querySelector('.water')
 
