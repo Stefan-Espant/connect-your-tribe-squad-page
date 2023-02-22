@@ -88,7 +88,7 @@ section:first-child h2 {
 }
 
 section:last-child {
-    width: var(--w-full);
+    width: 100%;
     height: auto;
     background-color: var(--c-primary-25);
     padding: var(--u-default);
@@ -212,7 +212,7 @@ ul {
 
 ul:focus {
     border: 0.2em solid var(--c-primary-50);
-} 
+}
 
 .coffee-machine .display li {
     height: 33%;
@@ -397,7 +397,6 @@ ul:focus {
     gap: var(--u-default);
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
     scrollbar-color: none;
     scrollbar-width: none;
 }
@@ -466,7 +465,7 @@ ul:focus {
         top: var(--u-large);
         bottom: unset;
     }
-}   
+}
 
 @media (min-height: 40em) {
 
@@ -501,7 +500,7 @@ ul:focus {
     body {
         overflow-y: auto;
     }
-    
+
     h1 {
         display: block;
     }
