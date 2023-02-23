@@ -54,7 +54,7 @@ function setDispencerClass(drink) {
 	dispenser.forEach(dispenserSelector => {
 		const dispenserElement = document.querySelector(dispenserSelector)
 		dispenserElement.classList.add('liquid', drink)
-		setTimeout(() => dispenserElement.classList.remove('liquid', drink), 3000);
+		setTimeout(() => dispenserElement.classList.remove('liquid', drink), 12000);
 	})
 }
 

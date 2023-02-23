@@ -6,7 +6,7 @@ const url = 'https://whois.fdnd.nl/api/v1/'
 // Creëert een nieuwe express app
 const app = express()
 
-// Configure how I use Express
+// Configureert hoe ik Express kan gebruiken
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
@@ -18,11 +18,11 @@ app.get('/', async (request, response) => {
 	let squads
 	let squad
 
-	/* Haalt alle squads op */
+	// Haalt alle squads op uit de API en wacht voordat voorgaande commando's zijn uitgevoerd
 	await getSquads()
 		.then((response) => squads = response)
 
-	/* Filter uit de squads */
+	// Filter uit de squads
 	squads = squads.filter((item) => item.slug.startsWith('squa'))
 
 	if (!id) id = squads[2].id

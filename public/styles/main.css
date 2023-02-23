@@ -425,8 +425,15 @@ ul:focus {
 }
 
 .squad-members a {
+    display: inline-block;
     transition: var(--a-default);
-    border-bottom: var(--u-nano) solid var(--c-primary-0);
+    border: var(--u-micro) solid var(--c-primary-0);
+}
+
+.squad-members a:focus {
+    border: var(--u-micro) solid var(--c-primary-50);
+    border-radius: var(--u-medium);
+
 }
 
 .squad-members article {
