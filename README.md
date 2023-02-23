@@ -16,7 +16,8 @@
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
-Deze squadpage biedt een overzicht van alle studenten en squads 
+Deze squadpage biedt een overzicht van alle studenten en squads van de opleiding Frontend Design & Development van het cohort 2022. 
+Binnen de pagina kan de gebruiker linken naar de website van studenten per squad. Bonus: de gebruike kan een drankje uitkiezen die het apparaat laat maken. 
 
 [Bekijk de squadpage](https://blue-proud-hare.cyclic.app/)
 
