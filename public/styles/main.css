@@ -224,7 +224,7 @@ a:focus {
 }
 
 .coffee-machine p {
-    animation: roll-over 3s var(--a-large) ease-in-out forwards;
+    animation: roll-over 3s var(--a-large) cubic-bezier(0.33, 0.575, 0.565, 1) forwards;
     opacity: 0;
 }
 
@@ -233,9 +233,17 @@ a:focus {
         transform: translateY(1em);
     }
 
+    17.5% {
+        transform: translateY(-0.2em);
+    }
+
     20%, 80% {
         transform: translateY(0em);
         opacity: 1;
+    }
+
+    84% {
+        transform: translateY(0.4em);
     }
 
     100% {
