@@ -22,11 +22,23 @@ Deze squadpage biedt een overzicht van alle studenten en squads
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+### HTML
+
+### CSS
+
+### Javascript
+
+### Node
+
+### Express
+
 
 ## Installatie
 <!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
+Voor dit project heb ik Node geinstalleerd en met behulp van de terminal binnen Visual Studio Code geactiveerd met het commando `npm install`
 
 ## Gebruik
+
 
 ## Bronnen
 [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
