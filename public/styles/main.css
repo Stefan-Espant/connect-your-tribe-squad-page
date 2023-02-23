@@ -1,541 +1,537 @@
 /* Reset controls */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-a:focus-visible, ul:focus-visible {
-    outline: none;
+a:focus-visible,
+ul:focus-visible {
+  outline: none;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button * {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 button:focus-visible {
-    outline: none;
+  outline: none;
 }
 
 :root {
-    /* Animations */
-    --a-quick: 0.2s;
-    --a-default: 0.3s;
-    --a-medium: 0.6s;
+  /* Animations */
+  --a-quick: 0.2s;
+  --a-default: 0.3s;
+  --a-medium: 0.6s;
 
-    /* Colors */
-    --c-default: #fafafa;
-    --c-invert: #121212;
-    --c-primary-0: #f0f2f4;
-    --c-primary-25: #9bb3df;
-    --c-primary-50: #647fb3;
-    --c-primary-75: #294d90;
-    --c-primary-100: #2e3f5f;
-    --c-secundary-0: #e17878;
-    --c-secundary-50: #bf3c3c;
-    --c-secundary-100: #8b5a5a;
-    --c-tertiary-50: #7d593b;
-    --c-tea: #e7e2596a;
-    --c-water: #82c0db;
+  /* Colors */
+  --c-default: #fafafa;
+  --c-invert: #121212;
+  --c-primary-0: #f0f2f4;
+  --c-primary-25: #9bb3df;
+  --c-primary-50: #647fb3;
+  --c-primary-75: #294d90;
+  --c-primary-100: #2e3f5f;
+  --c-secundary-0: #e17878;
+  --c-secundary-50: #bf3c3c;
+  --c-secundary-100: #8b5a5a;
+  --c-tertiary-50: #7d593b;
+  --c-tea: #e7e2596a;
+  --c-water: #82c0db;
 
-    /* Layout */
-    --w-dix: 10vw;
-    --w-quarter: 25vw;
-    --w-third: 33vw;
-    --w-half: 50vw;
-    --w-full: 100vw;
-    --h-full: 100vh;
+  /* Layout */
+  --w-dix: 10vw;
+  --w-quarter: 25vw;
+  --w-third: 33vw;
+  --w-half: 50vw;
+  --w-full: 100vw;
+  --h-full: 100vh;
 
-    /* Units */
-    --u-nano: 0.1em;
-    --u-micro: 0.25em;
-    --u-small: 0.375em;
-    --u-medium: 0.5em;
-    --u-default: 1em;
-    --u-large: 2em;
-    --u-round: 50%;
+  /* Units */
+  --u-nano: 0.1em;
+  --u-micro: 0.25em;
+  --u-small: 0.375em;
+  --u-medium: 0.5em;
+  --u-default: 1em;
+  --u-large: 2em;
+  --u-round: 50%;
 }
 
 body {
-    overflow-y: scroll;
-    background-color: var(--c-primary-0);
-    font-family: open sans, sans-serif;
+  overflow-y: scroll;
+  background-color: var(--c-primary-0);
+  font-family: open sans, sans-serif;
 }
 
 /* Lay-out */
 
 section:first-child {
-    width: 100%;
-    height: 50vh;
-    background-attachment: fixed;
-    position: relative;
-    top: 0;
-    overflow-y: auto;
+  width: 100%;
+  height: 50vh;
+  background-attachment: fixed;
+  position: relative;
+  top: 0;
+  overflow-y: auto;
 }
 
 section:first-child p {
-    color: var(--c-primary-75);
-    display: flex;
-    align-items: center;
-    gap: var(--u-small);
-    padding: var(--u-default) 0;
+  color: var(--c-primary-75);
+  display: flex;
+  align-items: center;
+  gap: var(--u-small);
+  padding: var(--u-default) 0;
 }
 
 section:first-child h2 {
-    display: none;
+  display: none;
 }
 
 section:last-child {
-    width: 100%;
-    height: auto;
-    background-color: var(--c-primary-25);
-    padding: var(--u-default);
-    position: absolute;
+  width: 100%;
+  height: auto;
+  background-color: var(--c-primary-25);
+  padding: var(--u-default);
+  position: absolute;
 }
 
 /* icons */
 
 svg {
-    fill: var(--c-primary-75);
+  fill: var(--c-primary-75);
 }
 
 /* Typography */
 
 h1 {
-    font-size: 2.5em;
-    color: var(--c-primary-75);
-    display: none;
-    line-height: 1.4;
+  font-size: 2.5em;
+  color: var(--c-primary-75);
+  display: none;
+  line-height: 1.4;
 }
 
 h1 small {
-    font-size: 66%;
-    font-weight: normal;
-    color: var(--c-primary-100);
+  font-size: 66%;
+  font-weight: normal;
+  color: var(--c-primary-100);
 }
 
 h2 {
-    font-size: 1em;
-    color: var(--c-primary-100);
+  font-size: 1em;
+  color: var(--c-primary-100);
 }
 
 h2 small {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 small {
-    display: block;
-    color: var(--c-primary-100);
+  display: block;
+  color: var(--c-primary-100);
 }
 
 .title {
-    width: 40vw;
-    line-height: 1.1;
-    display: block;
-    position: fixed;
-    left: 20%;
-    top: 30%;
-    transform: translate(-20%, -30%);
-    gap: var(--u-small);
+  width: 40vw;
+  line-height: 1.1;
+  display: block;
+  position: fixed;
+  left: 20%;
+  top: 30%;
+  transform: translate(-20%, -30%);
+  gap: var(--u-small);
 }
 
 /* Layout */
 
 header {
-    padding: var(--u-default);
+  padding: var(--u-default);
 }
 
 header ul {
-    display: flex;
-    border: none;
-    gap: var(--u-default);
+  display: flex;
+  border: none;
+  gap: var(--u-default);
 }
 
 header a {
-    color: var(--c-primary-75);
-    border-bottom: 0.2em solid var(--c-primary-0);
-    transition: var(--a-default);
+  color: var(--c-primary-75);
+  border-bottom: 0.2em solid var(--c-primary-0);
+  transition: var(--a-default);
 }
 
-header a:hover, a:focus {
-    border-bottom: 0.2em solid var(--c-primary-75);
-    transition: var(--a-default);
+header a:hover,
+a:focus {
+  border-bottom: 0.2em solid var(--c-primary-75);
+  transition: var(--a-default);
 }
 
 /* Coffee machine */
 
 .coffee-machine {
-    width: fit-content;
-    height: fit-content;
-    display: block;
-    position: absolute;
-    top: 2em;
-    left: 50%;
-    transform: translate(-50%);
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .coffee-machine .body {
-    width: 16em;
-    height: 32em;
-    background-color: var(--c-primary-50);
-    border-radius: var(--u-medium);
-    position: relative;
-    padding: var(--u-large);
+  width: 16em;
+  height: 32em;
+  background-color: var(--c-primary-50);
+  border-radius: var(--u-medium);
+  position: relative;
+  padding: var(--u-large);
 }
 
 .coffee-machine .module {
-    width: 12em;
-    height: 16em;
-    background-color: var(--c-primary-25);
-    border-radius: var(--u-small);
-    padding: var(--u-default);
+  width: 12em;
+  height: 16em;
+  background-color: var(--c-primary-25);
+  border-radius: var(--u-small);
+  padding: var(--u-default);
 }
 
 .coffee-machine .display {
-    width: auto;
-    height: 100%;
-    background-color: var(--c-default);
-    border-radius: var(--u-small);
+  width: auto;
+  height: 100%;
+  background-color: var(--c-default);
+  border-radius: var(--u-small);
 }
 
 .coffee-machine .display ul {
-    height: 100%;
+  height: 100%;
 }
 
 ul {
-    border: 0.2em solid var(--c-primary-25);
-    border-radius: var(--u-small);
-    transition: var(--a-default);
+  border: 0.2em solid var(--c-primary-25);
+  border-radius: var(--u-small);
+  transition: var(--a-default);
 }
 
 ul:focus {
-    border: 0.2em solid var(--c-primary-50);
+  border: 0.2em solid var(--c-primary-50);
 }
 
 .coffee-machine .display li {
-    height: 33%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .coffee-machine .display button {
-    width: 10em;
-    height: 4em;
-    color: var(--c-primary-75);
-    background-color: var(--c-primary-0);
-    border: 0.2em solid var(--c-primary-25);
-    border-radius: var(--u-micro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--u-small);
-    transition: var(--a-default);
+  width: 10em;
+  height: 4em;
+  color: var(--c-primary-75);
+  background-color: var(--c-primary-0);
+  border: 0.2em solid var(--c-primary-25);
+  border-radius: var(--u-micro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--u-small);
+  transition: var(--a-default);
 }
 
 .coffee-machine .display button:hover {
-    background-color: var(--c-primary-25);
+  background-color: var(--c-primary-25);
 }
 
 .coffee-machine .display button:active {
-    background-color: var(--c-primary-75);
-    color: var(--c-primary-25);
+  background-color: var(--c-primary-75);
+  color: var(--c-primary-25);
 }
 .coffee-machine .display button:active svg {
-    fill: var(--c-primary-25);
+  fill: var(--c-primary-25);
 }
 
 .coffee-machine .display button:focus {
-    background-color: var(--c-primary-25);
+  background-color: var(--c-primary-25);
 }
 
 .coffee-machine .dispenser {
-    width: 6em;
-    height: 4em;
-    background-color: var(--c-secundary-50);
-    border-radius: 0 0 var(--u-small) var(--u-small);
-    position: relative;
-    z-index: 3;
-    margin: 0 auto;
+  width: 6em;
+  height: 4em;
+  background-color: var(--c-secundary-50);
+  border-radius: 0 0 var(--u-small) var(--u-small);
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
 }
 
 .coffee-machine .dispenser .left-dispenser,
 .right-dispenser {
-    width: 1.5em;
-    height: 1em;
-    background-color: var(--c-secundary-0);
-    border-radius: 0 0 var(--u-small) var(--u-small);
-    position: absolute;
-    z-index: 2;
-    bottom: -1em;
+  width: 1.5em;
+  height: 1em;
+  background-color: var(--c-secundary-0);
+  border-radius: 0 0 var(--u-small) var(--u-small);
+  position: absolute;
+  z-index: 2;
+  bottom: -1em;
 }
 
 .coffee-machine .dispenser .left-dispenser {
-    left: var(--u-default);
+  left: var(--u-default);
 }
 
 .coffee-machine .left-dispenser-output,
 .right-dispenser-output {
-    width: 1em;
-    height: 0em;
-    position: absolute;
-    z-index: 0;
-    top: 1em;
-    left: 0.25em;
+  width: 1em;
+  height: 0em;
+  position: absolute;
+  z-index: 0;
+  top: 1em;
+  left: 0.25em;
 }
 
 .liquid {
-    animation: liquid 10s 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  animation: liquid 10s 2s
+    cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
 .coffee {
-    background-color: var(--c-tertiary-50);
+  background-color: var(--c-tertiary-50);
 }
 
 .tea {
-    background-color: var(--c-tea);
+  background-color: var(--c-tea);
 }
 
 .water {
-    background-color: var(--c-water);
+  background-color: var(--c-water);
 }
 
 @keyframes liquid {
-    0% {
-        height: 0em;
-    }
+  0% {
+    height: 0em;
+  }
 
-    2% {
-        height: 1em;
-    }
+  2% {
+    height: 1em;
+  }
 
-    98% {
-        height: 1em;
-    }
+  98% {
+    height: 1em;
+  }
 
-    100% {
-        height: 0em;
-    }
+  100% {
+    height: 0em;
+  }
 }
 
 .coffee-machine .dispenser .right-dispenser {
-    right: var(--u-default);
+  right: var(--u-default);
 }
 
 .coffee-machine .mugholder {
-    width: 12em;
-    height: 12em;
-    background-color: var(--c-primary-100);
-    position: absolute;
-    bottom: 0;
-    border-radius: 0.5em 0.5em 0 0;
+  width: 12em;
+  height: 12em;
+  background-color: var(--c-primary-100);
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5em 0.5em 0 0;
 }
 
 .coffee-machine .mug {
-    width: 5em;
-    height: 5em;
-    display: block;
-    background-color: var(--c-primary-0);
-    border-radius: 0 0 33% 33%;
-    position: absolute;
-    top: 4em;
-    left: 3.5em;
+  width: 5em;
+  height: 5em;
+  display: block;
+  background-color: var(--c-primary-0);
+  border-radius: 0 0 33% 33%;
+  position: absolute;
+  top: 4em;
+  left: 3.5em;
 }
 
 .coffee-machine .mugear {
-    width: 2.5em;
-    height: 2.5em;
-    background-color: var(--c-primary-0);
-    border-radius: 0 50% 50% 0;
-    position: absolute;
-    right: -2em;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: var(--c-primary-0);
+  border-radius: 0 50% 50% 0;
+  position: absolute;
+  right: -2em;
 }
 
 .coffee-machine .mugear::after {
-    content: "";
-    width: 1em;
-    height: 1em;
-    background-color: var(--c-primary-100);
-    border-radius: 0 50% 50% 0;
-    position: absolute;
-    top: 0.75em;
-    left: 0.75em;
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-color: var(--c-primary-100);
+  border-radius: 0 50% 50% 0;
+  position: absolute;
+  top: 0.75em;
+  left: 0.75em;
 }
 
 .coffee-machine .mugplatform {
-    width: 8em;
-    height: 1em;
-    background-color: var(--c-secundary-50);
-    border-radius: var(--u-micro);
-    position: absolute;
-    left: var(--u-large);
-    bottom: 2em;
-    margin: 0 auto;
+  width: 8em;
+  height: 1em;
+  background-color: var(--c-secundary-50);
+  border-radius: var(--u-micro);
+  position: absolute;
+  left: var(--u-large);
+  bottom: 2em;
+  margin: 0 auto;
 }
 
 /* Squad member list */
 
 .squad-members {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--u-small);
-    margin: 0 auto;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--u-small);
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .squad-members ul {
-    width: 80vw;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    padding: 1em;
-    gap: var(--u-default);
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-color: none;
-    scrollbar-width: none;
+  width: 80vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 1em;
+  gap: var(--u-default);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: none;
+  scrollbar-width: none;
 }
 
 .squad-members li {
-    width: 12em;
-    height: 15em;
-    display: block;
-    background-color: var(--c-primary-0);
-    box-shadow: 0.1em 0.1em 0em 0.1em var(--c-primary-50);
-    border-radius: var(--u-medium);
-    padding: var(--u-default);
-    scroll-snap-align: center;
+  width: 12em;
+  height: 15em;
+  display: block;
+  background-color: var(--c-primary-0);
+  box-shadow: 0.1em 0.1em 0em 0.1em var(--c-primary-50);
+  border-radius: var(--u-medium);
+  padding: var(--u-default);
+  scroll-snap-align: center;
 }
 
 .squad-members a {
-    display: inline-block;
-    transition: var(--a-default);
-    border: var(--u-micro) solid var(--c-primary-0);
+  display: inline-block;
+  transition: var(--a-default);
+  border: var(--u-micro) solid var(--c-primary-0);
 }
 
 .squad-members a:focus {
-    border: var(--u-micro) solid var(--c-primary-50);
-    border-radius: var(--u-medium);
-
+  border: var(--u-micro) solid var(--c-primary-50);
+  border-radius: var(--u-medium);
 }
 
 .squad-members article {
-    width: 8em;
-    height: 4em;
+  width: 8em;
+  height: 4em;
 }
 
 .squad-members img {
-    width: 4em;
-    height: 4em;
-    display: block;
-    border: 0.1em solid var(--c-primary-0);
-    border-radius: var(--u-small);
-    margin-bottom: var(--u-small);
+  width: 4em;
+  height: 4em;
+  display: block;
+  border: 0.1em solid var(--c-primary-0);
+  border-radius: var(--u-small);
+  margin-bottom: var(--u-small);
 }
 
 .squad-members .anonymous {
-    width: 4em;
-    height: 4em;
-    border-radius: var(--u-micro);
-    margin-bottom: var(--u-small);
-    transform: scale(1);
+  width: 4em;
+  height: 4em;
+  border-radius: var(--u-micro);
+  margin-bottom: var(--u-small);
+  transform: scale(1);
 }
 
 .squad-members svg {
-    width: 2.75em;
-    height: 2.75em;
-    fill: var(--c-primary-50);
-    transition: var(--a-default);
-    transform: scale(0.72);
+  width: 2.75em;
+  height: 2.75em;
+  fill: var(--c-primary-50);
+  transition: var(--a-default);
+  transform: scale(0.72);
 }
 
 .squad-members a:hover svg {
-    transform: rotateZ(-33deg);
-    fill: var(--c-primary-75);
+  transform: rotateZ(-33deg);
+  fill: var(--c-primary-75);
 }
 
 /* Media queries for height */
-
 @media (min-height: 10em) {
-    section:first-child {
-        min-height: 40em;
-    }
+  section:first-child {
+    min-height: 40em;
+  }
 
-    .coffee-machine {
-        top: var(--u-large);
-        bottom: unset;
-    }
+  .coffee-machine {
+    top: var(--u-large);
+    bottom: unset;
+  }
 }
 
 @media (min-height: 40em) {
-
-    .coffee-machine {
-        top: unset;
-        bottom: 10vh;
-    }
+  .coffee-machine {
+    top: unset;
+    bottom: 10vh;
+  }
 }
 
 @media (min-height: 48em) {
+  section:first-child {
+    height: 70vh;
+  }
 
-    section:first-child {
-        height: 70vh;
-    }
-
-    .coffee-machine {
-        top: unset;
-    }
+  .coffee-machine {
+    top: unset;
+  }
 }
 
 @media (min-height: 65em) {
-    section:first-child {
-        height: 70vh;
-    }
-
+  section:first-child {
+    height: 70vh;
+  }
 }
 
 /* Media queries for width */
-
 @media (min-width: 48em) {
+  body {
+    overflow-y: auto;
+  }
 
-    body {
-        overflow-y: auto;
-    }
+  h1 {
+    display: block;
+  }
 
-    h1 {
-        display: block;
-    }
+  section:first-child h2 {
+    display: block;
+  }
 
-    section:first-child h2 {
-        display: block;
-    }
+  .coffee-machine {
+    height: fit-content;
+    left: 75%;
+    transform: translate(-75%);
+    bottom: unset;
+    top: 4em;
+  }
 
-    .coffee-machine {
-        height: fit-content;
-        left: 75%;
-        transform: translate(-75%);
-        bottom: unset;
-        top: 4em;
-    }
-
-    .squad-members ul {
-        width: 66vw;
-        position: relative;
-    }
+  .squad-members ul {
+    width: 66vw;
+    position: relative;
+  }
 }
