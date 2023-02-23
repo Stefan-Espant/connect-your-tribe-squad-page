@@ -20,15 +20,15 @@ ul:focus-visible {
   outline: none;
 }
 
-button {
+.button {
   cursor: pointer;
 }
 
-button * {
+.button * {
   pointer-events: none;
 }
 
-button:focus-visible {
+.button:focus-visible {
   outline: none;
 }
 
@@ -216,6 +216,10 @@ a:focus {
 
 .coffee-machine .display ul {
   height: 100%;
+	padding: .5rem;
+	display: flex;
+	flex-flow: column;
+	gap: .5rem;
 }
 
 ul {
@@ -229,15 +233,15 @@ ul:focus {
 }
 
 .coffee-machine .display li {
-  height: 33%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.coffee-machine .display button {
-  width: 10em;
-  height: 4em;
+.coffee-machine .display .button {
+	height: 100%;
+	width: 100%;
   color: var(--c-primary-75);
   background-color: var(--c-primary-0);
   border: 0.2em solid var(--c-primary-25);
@@ -249,19 +253,19 @@ ul:focus {
   transition: var(--a-default);
 }
 
-.coffee-machine .display button:hover {
+.coffee-machine .display .button:hover {
   background-color: var(--c-primary-25);
 }
 
-.coffee-machine .display button:active {
+.coffee-machine .display .button:active {
   background-color: var(--c-primary-75);
   color: var(--c-primary-25);
 }
-.coffee-machine .display button:active svg {
+.coffee-machine .display .button:active svg {
   fill: var(--c-primary-25);
 }
 
-.coffee-machine .display button:focus {
+.coffee-machine .display .button:focus {
   background-color: var(--c-primary-25);
 }
 

@@ -17,9 +17,10 @@ const dispenser = [
 ];
 
 addEventListener("click", (event) => {
+	event.preventDefault()
   const { target } = event;
 
-  if (!target.matches("button")) return;
+  if (!target.matches("a")) return;
 
   switch (target.id) {
     case "coffeeEvent":
@@ -31,10 +32,9 @@ addEventListener("click", (event) => {
     case "waterEvent":
       playWater();
       break;
-
-    default:
-      break;
   }
+
+	setTimeout(() => location.href = target.href, 3000);
 });
 
 function playCoffee() {
