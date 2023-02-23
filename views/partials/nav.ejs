@@ -1,25 +1,11 @@
 <header>
-<<<<<<< HEAD
-  <ul>
-    <li>
-      <h2><%= squad.cohort %></h2>
-    </li>
-    <% squads.forEach((squad) => { %>
-    <li>
-      <a href="/?id=<%= squad.id %>"><%= squad.name %></a>
-    </li>
-    <% }) %>
-  </ul>
-</header>
-=======
-	<ul>
+    <ul>
         <h2><%= squad.cohort %></h2>
-		<% squads.forEach((squad) => { %>
-		<li>
-			<a href="/?id=<%= squad.id %>&favoriteDrink=<%= favoriteDrink %>"><%= squad.name %></a>
-		</li>
-		<% }) %>
-
-	</ul>
+        <% squads.forEach((squad) => { %>
+        <li>
+            <a href="/?id=<%= squad.id %>&favoriteDrink=<%= favoriteDrink %>"><%= squad.name %></a>
+        </li>
+        <% }) %>
+    </ul>
 </header>
->>>>>>> 46744aea778e12cc1cba812075a8691273563b06
+
