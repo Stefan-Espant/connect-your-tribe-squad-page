@@ -3,9 +3,9 @@
         <h2><%= squad.cohort %></h2>
 		<% squads.forEach((squad) => { %>
 		<li>
-			<a href="/?id=<%= squad.id %>"><%= squad.name %></a>
+			<a href="/?id=<%= squad.id %>&favoriteDrink=<%= favoriteDrink %>"><%= squad.name %></a>
 		</li>
 		<% }) %>
-        
+
 	</ul>
 </header>

@@ -13,7 +13,7 @@ app.use(express.static('public'))
 
 // Maakt een route voor de index
 app.get('/', async (request, response) => {
-	let { id, direction } = request.query
+	let { id, direction, favoriteDrink } = request.query
 
 	let squads
 	let squad
@@ -27,10 +27,10 @@ app.get('/', async (request, response) => {
 
 	if (!id) id = squads[2].id
 	if (!direction) direction = 'ASC'
-	await getSquad({ id, orderBy: 'surname', direction })
+	await getSquad({ id, orderBy: 'surname', direction, favoriteDrink })
 		.then((response) => squad = response)
 
-	response.render('index', { squads, squad, members: squad.members })
+	response.render('index', { squads, squad, members: squad.members, favoriteDrink })
 })
 
 // Configureert op welke poortnummer express naar luisteren zal
@@ -53,7 +53,12 @@ app.listen(app.get('port'), function () {
  */
 async function fetchJson(endpoint, queryParams) {
 	let queryParamsString = ''
-	if (queryParams) queryParamsString = new URLSearchParams(queryParams).toString()
+	if (queryParams) {
+		for (const property in queryParams) {
+			if (typeof queryParams[property] === 'undefined') delete(queryParams[property])
+		}
+		queryParamsString = new URLSearchParams(queryParams).toString()
+	}
 
 	return await fetch(`${ url }/${ endpoint }?${ queryParamsString }`)
 		.then((response) => response.json())
