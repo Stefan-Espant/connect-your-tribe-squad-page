@@ -460,7 +460,6 @@ ul:focus {
   width: 4em;
   height: 4em;
   border-radius: var(--u-micro);
-  margin-bottom: var(--u-small);
   transform: scale(1);
 }
 
