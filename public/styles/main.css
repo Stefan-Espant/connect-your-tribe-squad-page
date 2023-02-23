@@ -37,6 +37,7 @@ ul:focus-visible {
   --a-quick: 0.2s;
   --a-default: 0.3s;
   --a-medium: 0.6s;
+  --a-large: 1s;
 
   /* Colors */
   --c-default: #fafafa;
@@ -221,6 +222,27 @@ a:focus {
 	flex-flow: column;
 	gap: .5rem;
 }
+
+.coffee-machine p {
+    animation: roll-over 3s var(--a-large) ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes roll-over {
+    0% {
+        transform: translateY(1em);
+    }
+
+    20%, 80% {
+        transform: translateY(0em);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-1em);
+    }
+}
+
 
 ul {
   border: 0.2em solid var(--c-primary-25);
