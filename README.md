@@ -158,7 +158,7 @@ app.use(express.static('public'))
 Voor dit project heb ik Node geinstalleerd en met behulp van de terminal binnen Visual Studio Code geactiveerd met het commando `npm init`. Zo wordt de node omgeving geïnitialiseerd. Zodra dat gelukt is kan `npm install` worden uitgevoerd. Tot slot wanneer er aanpassen zijn gemaakt op nieuwe regels code zijn gemaakt kan met behulp van `npm start` het resultaat worden weergegeven in de browser. Wanneer de server gesloten moet worden, of opnieuw worden opgestart, kan met de sneltoets `control + c / ^c` op mac.
 
 ## Gebruik
-
+N.v.t.
 
 ## Bronnen
 [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
