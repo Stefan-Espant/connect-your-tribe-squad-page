@@ -2,12 +2,13 @@
   <ul>
     <% squad.members.forEach(member => { %>
     <li>
-      <!-- Wanneer  -->
+      <!-- Wanneer de member een avatar op Github heeft, toon die afbeelding. -->
       <% if (member.avatar) { %>
       <img
         src="<%= member.avatar %>"
         alt="De avatar van <%= member.name %>"
       />
+      <!-- Wanneer de member er geen heeft, word deze svg getoond. -->
       <% }else{ %>
       <svg
         class="anonymous"
