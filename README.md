@@ -168,7 +168,7 @@ Om deze repository te gebruiken volg dan de volgende stappen:
 <li> Zodra het commando is uitgevoerd kan via de ontvangen link de website worden weergegeven in de browser. Standaard heet deze localhost:8000.</li>
 <li> Om de site live te zetten kan je gebruik maken van de Cyclic webhosting.</li>
 <li> Log in met je Github en koppel de repository.</li>
-<li> Ontvang vervolgens de gegenereerde, willekeurige URL van Cyclic.<li>
+<li> Ontvang vervolgens de gegenereerde, willekeurige URL van Cyclic.</li>
 <li> Upload en fetch tot slot de site met Github Desktop.</li>
 </ul>
 
