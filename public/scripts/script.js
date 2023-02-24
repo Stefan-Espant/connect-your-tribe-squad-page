@@ -34,7 +34,11 @@ addEventListener("click", (event) => {
       break;
   }
 
-	setTimeout(() => location.href = target.href, 3000);
+	let timeout
+	if (target.classList.contains('drink-button')) timeout = 3000
+	else timeout = 0
+
+	setTimeout(() => location.href = target.href, timeout);
 });
 
 function playCoffee() {

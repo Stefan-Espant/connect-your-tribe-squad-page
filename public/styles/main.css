@@ -15,6 +15,10 @@ a {
   cursor: pointer;
 }
 
+a * {
+	pointer-events: none;
+}
+
 a:focus-visible,
 ul:focus-visible {
   outline: none;
