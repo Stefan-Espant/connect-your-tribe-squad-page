@@ -158,7 +158,20 @@ app.use(express.static('public'))
 Voor dit project heb ik Node geinstalleerd en met behulp van de terminal binnen Visual Studio Code geactiveerd met het commando `npm init`. Zo wordt de node omgeving geïnitialiseerd. Zodra dat gelukt is kan `npm install` worden uitgevoerd. Tot slot wanneer er aanpassen zijn gemaakt op nieuwe regels code zijn gemaakt kan met behulp van `npm start` het resultaat worden weergegeven in de browser. Wanneer de server gesloten moet worden, of opnieuw worden opgestart, kan met de sneltoets `control + c / ^c` op mac.
 
 ## Gebruik
-N.v.t.
+Om deze repository te gebruiken volg dan de volgende stappen:
+
+<ul>
+<li> Installeer de recenste versie van Node via deze [link](https://nodejs.org/en/)</li>
+<li> Open de repository met Github Desktop en clone vervolgens de leertaak</li>
+<li> Open in Visual Code Studio de terminal en voer het commando `npm install` uit.</li>
+<li> Type daarna het commando `npm start`.</li>
+<li> Zodra het commando is uitgevoerd kan via de ontvangen link de website worden weergegeven in de browser. Standaard heet deze localhost:8000.</li>
+<li> Om de site live te zetten kan je gebruik maken van de Cyclic webhosting.</li>
+<li> Log in met je Github en koppel de repository.</li>
+<li> Ontvang vervolgens de gegenereerde, willekeurige URL van Cyclic.<li>
+<li> Upload en fetch tot slot de site met Github Desktop.</li>
+</ul>
+
 
 ## Bronnen
 [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
