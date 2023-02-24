@@ -1,6 +1,7 @@
-<img width="1440" alt="Schermafbeelding 2023-02-21 om 10 02 22" src="https://user-images.githubusercontent.com/89298385/220298039-a23410cc-24ca-4806-9483-3349eedab0d0.png">
+<img width="1440" alt="Schermafbeelding 2023-02-24 om 09 29 01" src="https://user-images.githubusercontent.com/89298385/221129948-c32c4b51-9e2b-42fa-93bb-c35ce2032a47.png">
 
-# Dynamische Squadpagina 
+# Dynamische Squadpagina
+
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## Inhoudsopgave
