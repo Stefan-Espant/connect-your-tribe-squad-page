@@ -20,7 +20,7 @@
 Deze squadpage biedt een overzicht van alle studenten en squads van de opleiding Frontend Design & Development van het cohort 2022. 
 Binnen de pagina kan de gebruiker linken naar de website van studenten per squad. Bonus: de gebruike kan een drankje uitkiezen die het apparaat laat maken. 
 
-[Bekijk de squadpage](https://blue-proud-hare.cyclic.app/)
+[Bekijk de squadpage](https://wide-eyed-newt-neckerchief.cyclic.app)
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
